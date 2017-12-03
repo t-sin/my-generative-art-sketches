@@ -2,21 +2,21 @@
 
 ## To run
 
-1. install dependencies
+1. install with roswell
 
 ```sh
-$ ros install sketch
 $ ros install sebity/noise
+$ ros install t-sin/my-generative-art-sketches
 ```
 
-2. load any lisp files
+2. load system
 
 ```lisp
-CL-USER> (load "perlin-circle.lisp")
+CL-USER> (ql:quickload :my-sketches)
 ```
 
 3. run as making instance
 
 ```lisp
-CL-USER> (make-instance 'perlin-circle:perlin-circle)
+CL-USER> (make-instance 'my-sketches:perlin-circle)
 ```

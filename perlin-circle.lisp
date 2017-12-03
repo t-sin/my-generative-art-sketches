@@ -1,8 +1,4 @@
-(in-package :cl-user)
-(defpackage :perlin-circle
-  (:use :cl :sketch)
-  (:export :perlin-circle))
-(in-package :perlin-circle)
+(in-package :my-sketches)
 
 (defparameter +width+ 800)
 (defparameter +height+ 600)
