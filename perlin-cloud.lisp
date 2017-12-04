@@ -1,7 +1,7 @@
 (in-package :cl-user)
 (defpackage :my-sketches.perlin-cloud
   (:use :cl :sketch)
-  (:export :perlin-cloud))
+  (:export :mysketch))
 (in-package :my-sketches.perlin-cloud)
 
 (defparameter +width+ 400)
@@ -10,9 +10,10 @@
 (defun noise-2d (x y)
   (black-tie:perlin-noise x y 0))
 
-(defsketch perlin-cloud ((title "perlin cloud")
-                         (width +width+)
-                         (height +height+))
+(defsketch mysketch
+    ((title "perlin cloud")
+     (width +width+)
+     (height +height+))
   (with-pen (make-pen :fill (rgb 0.2 0.1 0))
     (rect 0 0 +width+ +height+))
   (let ((noise-factor 0.04))

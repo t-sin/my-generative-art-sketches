@@ -17,5 +17,5 @@ CL-USER> (ql:quickload :my-sketches)
 3. run as making instance
 
 ```lisp
-CL-USER> (make-instance 'my-sketches:perlin-circle)
+CL-USER> (make-instance 'my-sketches.perlin-circle:mysketch)
 ```

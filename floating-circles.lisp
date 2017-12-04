@@ -1,7 +1,7 @@
 (in-package :cl-user)
 (defpackage :my-sketches.floating-circles
   (:use :cl :sketch)
-  (:export :floating-circles))
+  (:export :mysketch))
 (in-package :my-sketches.floating-circles)
 
 (defparameter +width+ 600)
@@ -32,7 +32,7 @@
                                         :vx (- (random 4.0) 2)
                                         :vy (- (random 4.0) 2)
                                         :h (random 1.0))))
-  (defsketch floating-circles
+  (defsketch mysketch
       ((title "floating-circles")
        (width +width+)
        (height +height+))

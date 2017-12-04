@@ -1,7 +1,7 @@
 (in-package :cl-user)
 (defpackage :my-sketches.perlin-circles
   (:use :cl :sketch)
-  (:export :perlin-circles))
+  (:export :mysketch))
 (in-package :my-sketches.perlin-circles)
 
 (defparameter +width+ 800)
@@ -10,9 +10,10 @@
 (defun noise-2d (x y)
   (black-tie:perlin-noise x y 0))
 
-(defsketch perlin-circles ((title "perlin circle")
-                           (width +width+)
-                           (height +height+))
+(defsketch mysketch
+    ((title "perlin circle")
+     (width +width+)
+     (height +height+))
   (with-pen (make-pen :fill (rgb 0.11 0 0.1))
     (rect 0 0 +width+ +height+))
   (let ((interval 17)
