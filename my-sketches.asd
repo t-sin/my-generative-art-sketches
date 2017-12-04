@@ -10,4 +10,5 @@
                "sketch")
   :components ((:file "package")
                (:file "perlin-circle")
+               (:file "perlin-cloud")
                (:file "line-flowers")))
