@@ -4,9 +4,7 @@
 (defparameter +height+ 600)
 
 (defun noise-2d (x y)
-  (black-tie:perlin-noise (coerce x 'double-float)
-                          (coerce y 'double-float)
-                          0))
+  (black-tie:perlin-noise x y 0))
 
 (defsketch perlin-circle ((title "perlin circle")
                           (width +width+)
