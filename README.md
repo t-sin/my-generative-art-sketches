@@ -5,7 +5,6 @@
 1. install with roswell
 
 ```sh
-$ ros install sebity/noise
 $ ros install t-sin/my-generative-art-sketches
 ```
 

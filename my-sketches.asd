@@ -6,8 +6,8 @@
 (defsystem :my-sketches
   :description "my generative art sketches."
   :author "Shinichi TANAKA"
-  :depends-on ("sketch"
-               "noise")
+  :depends-on ("black-tie"
+               "sketch")
   :components ((:file "package")
                (:file "perlin-circle")
                (:file "line-flowers")))

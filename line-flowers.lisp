@@ -4,7 +4,7 @@
 (defparameter +height+ 600)
 
 (defun noise (x)
-  (noise:noise-1d (coerce x 'double-float)))
+  (black-tie:perlin-noise (coerce x 'double-float) 0 0))
 
 (defun points-on-circle (x y deg radius)
   (list (+ x (* (sin (radians deg)) radius))
