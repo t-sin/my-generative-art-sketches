@@ -9,4 +9,5 @@
   :depends-on ("sketch"
                "noise")
   :components ((:file "package")
-               (:file "perlin-circle")))
+               (:file "perlin-circle")
+               (:file "line-flowers")))
