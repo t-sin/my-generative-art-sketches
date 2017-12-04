@@ -4,8 +4,8 @@
   (:export :perlin-cloud))
 (in-package :my-sketches.perlin-cloud)
 
-(defparameter +width+ 800)
-(defparameter +height+ 600)
+(defparameter +width+ 400)
+(defparameter +height+ 400)
 
 (defun noise-2d (x y)
   (black-tie:perlin-noise x y 0))
