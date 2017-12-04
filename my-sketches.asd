@@ -8,7 +8,6 @@
   :author "Shinichi TANAKA"
   :depends-on ("black-tie"
                "sketch")
-  :components ((:file "package")
-               (:file "perlin-circle")
+  :components ((:file "perlin-circles")
                (:file "perlin-cloud")
-               (:file "line-flowers")))
+               (:file "line-flower")))

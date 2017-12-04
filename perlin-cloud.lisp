@@ -1,4 +1,8 @@
-(in-package :my-sketches)
+(in-package :cl-user)
+(defpackage :my-sketches.perlin-cloud
+  (:use :cl :sketch)
+  (:export :perlin-cloud))
+(in-package :my-sketches.perlin-cloud)
 
 (defparameter +width+ 800)
 (defparameter +height+ 600)

@@ -1,4 +1,8 @@
-(in-package :my-sketches)
+(in-package :cl-user)
+(defpackage :my-sketches.line-flower
+  (:use :cl :sketch)
+  (:export :line-flower))
+(in-package :my-sketches.line-flower)
 
 (defparameter +width+ 800)
 (defparameter +height+ 600)
@@ -23,9 +27,9 @@
              (apply #'line `(,@(points-on-circle x y deg radius)
                              ,@(points-on-circle x y (+ deg 160) radius)))))))
 
-(defsketch line-flowers ((title "line flowers")
-                         (width +width+)
-                         (height +height+))
+(defsketch line-flower ((title "line flowers")
+                        (width +width+)
+                        (height +height+))
   (with-pen (make-pen :fill (rgb 0.1 0.1 0.14))
     (rect 0 0 +width+ +height+)
     (flower (/ +width+ 2) (/ +height+ 2) 500 2.12)))
