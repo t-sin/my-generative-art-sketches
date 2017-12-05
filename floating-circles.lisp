@@ -4,8 +4,8 @@
   (:export :mysketch))
 (in-package :my-sketches.floating-circles)
 
-(defparameter +width+ 600)
-(defparameter +height+ 400)
+(defparameter +width+ 800)
+(defparameter +height+ 600)
 
 (defstruct pt x y vx vy h cycle tick)
 
@@ -13,10 +13,18 @@
   (let ((x (pt-x p))
         (y (pt-y p))
         (h (pt-h p)))
-    (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.8 0.2))
-      (circle x y (+ 20 (* 10 (black-tie:perlin-noise (* x 0.1) (* y 0.1) 0)))))
+    (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.8 0.4))
+      (circle x y (+ 30 (* 10 (black-tie:perlin-noise (* x 0.1) (* y 0.1) 0)))))
     (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.8 1))
       (circle x y 1))))
+
+(defun random-velocity ()
+  (- (random 4.0) 2))
+
+(defun to-center-velocity (pos len)
+  (if (or (< pos 0) (> pos len))
+      (* (- (/ len 2) pos) 0.01)
+      0))
 
 (defun move-point (p)
   (setf (pt-vx p) (* (pt-vx p) 0.9891)
@@ -24,8 +32,8 @@
   (incf (pt-x p) (pt-vx p))
   (incf (pt-y p) (pt-vy p))
   (when (zerop (mod (pt-tick p) (pt-cycle p)))
-    (setf (pt-vx p) (- (random 2.0) 1)
-          (pt-vy p) (- (random 2.0) 1)
+    (setf (pt-vx p) (+ (random-velocity) (to-center-velocity (pt-x p) +width+))
+          (pt-vy p) (+ (random-velocity) (to-center-velocity (pt-y p) +height+))
           tick 0))
   (incf (pt-tick p)))
 
@@ -34,11 +42,11 @@
      :for i :from 0 :below (length points)
      :do (setf (aref points i) (make-pt :x (random +width+)
                                         :y (random +height+)
-                                        :vx (- (random 2.0) 1)
-                                        :vy (- (random 2.0) 1)
+                                        :vx (random-velocity)
+                                        :vy (random-velocity)
                                         :h (random 1.0)
                                         :tick 0
-                                        :cycle (+ 100 (random 100)))))
+                                        :cycle (+ 100 (random 150)))))
   (defsketch mysketch
       ((title "floating-circles")
        (width +width+)
