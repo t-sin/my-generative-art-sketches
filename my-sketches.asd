@@ -11,4 +11,5 @@
   :components ((:file "perlin-circles")
                (:file "perlin-cloud")
                (:file "line-flower")
-               (:file "floating-circles")))
+               (:file "floating-circles")
+               (:file "flowline")))
