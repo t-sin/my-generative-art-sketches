@@ -13,8 +13,8 @@
   (let ((x (pt-x p))
         (y (pt-y p))
         (h (pt-h p)))
-    (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.8 0.4))
-      (circle x y (+ 30 (* 10 (black-tie:perlin-noise (* x 0.1) (* y 0.1) 0)))))
+    (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.9 0.4))
+      (circle x y (+ 20 (* 10 (black-tie:perlin-noise (* x 0.1) (* y 0.1) 0)))))
     (with-pen (make-pen :stroke nil :fill (hsb h 0.5 0.8 1))
       (circle x y 1))))
 
@@ -23,12 +23,12 @@
 
 (defun to-center-velocity (pos len)
   (if (or (< pos 0) (> pos len))
-      (* (- (/ len 2) pos) 0.01)
+      (/ (- (/ len 2) pos) len)
       0))
 
 (defun move-point (p)
-  (setf (pt-vx p) (* (pt-vx p) 0.9891)
-        (pt-vy p) (* (pt-vy p) 0.9891))
+  (setf (pt-vx p) (* (pt-vx p) 0.9911)
+        (pt-vy p) (* (pt-vy p) 0.9911))
   (incf (pt-x p) (pt-vx p))
   (incf (pt-y p) (pt-vy p))
   (when (zerop (mod (pt-tick p) (pt-cycle p)))
