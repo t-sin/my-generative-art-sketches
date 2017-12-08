@@ -7,6 +7,7 @@
   :description "my generative art sketches."
   :author "Shinichi TANAKA"
   :depends-on ("black-tie"
+               "easing"
                "sketch")
   :components ((:file "perlin-circles")
                (:file "perlin-cloud")

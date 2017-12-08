@@ -7,20 +7,21 @@
 (defparameter +width+ 1000)
 (defparameter +height+ 700)
 
-(defun random-vel ()
-  (- (random 5.0) 2.5))
+(defun random% ()
+  (- (random 0.04) 0.02))
 
-(defstruct cell x y vx vy h tick period)
+(defstruct cell x y vx vy ax ay tick period)
 
 (defparameter *cells*
-  (let ((cells (make-array 50)))
+  (let ((cells (make-array 30)))
     (dotimes (n (length cells) cells)
       (setf (aref cells n)
             (make-cell :x (random +width+)
                        :y (random +height+)
-                       :vx (random-vel)
-                       :vy (random-vel)
-                       :h (* n (/ +height+ (length cells)))
+                       :vx 0
+                       :vy 0
+                       :ax (random%)
+                       :ay (random%)
                        :tick 0
                        :period (+ 150 (random 100)))))))
 
@@ -40,11 +41,16 @@
         (vy (cell-vy c))
         (tick (cell-tick c))
         (period (cell-period c)))
-    (setf (cell-x c) (+ x (* vx (/ tick period)))
-          (cell-y c) (+ y (* vy (/ tick period))))
+    (setf (cell-x c) (+ x vx)
+          (cell-y c) (+ y vy)
+          (cell-vx c) (+ (* vx 0.991) (to-center x +width+) (cell-ax c))
+          (cell-vy c) (+ (* vy 0.991) (to-center y +height+) (cell-ay c)))
+    (when (>= tick (/ period 3))
+      (setf (cell-ax c) 0
+            (cell-ay c) 0))
     (when (>= tick period)
-      (setf (cell-vx c) (+ (random-vel) (to-center x +width+))
-            (cell-vy c) (+ (random-vel) (to-center y +height+))
+      (setf (cell-ax c) (random%)
+            (cell-ay c) (random%)
             (cell-tick c) 0))
     (incf (cell-tick c))))
         
