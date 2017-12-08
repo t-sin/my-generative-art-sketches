@@ -14,4 +14,5 @@
                (:file "floating-circles")
                (:file "flowline")
                (:file "bubbles")
-               (:file "wall")))
+               (:file "wall")
+               (:file "fire")))
