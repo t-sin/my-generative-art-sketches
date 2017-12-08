@@ -12,4 +12,5 @@
                (:file "perlin-cloud")
                (:file "line-flower")
                (:file "floating-circles")
-               (:file "flowline")))
+               (:file "flowline")
+               (:file "bubbles")))
