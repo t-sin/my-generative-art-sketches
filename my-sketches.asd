@@ -13,4 +13,5 @@
                (:file "line-flower")
                (:file "floating-circles")
                (:file "flowline")
-               (:file "bubbles")))
+               (:file "bubbles")
+               (:file "wall")))
