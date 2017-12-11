@@ -2,19 +2,25 @@
 
 ## To run
 
-1. install with roswell
+1. install prequisites
+
+```sh
+$ sudo apt install -y libsdl2-ttf-2.0-0 libsdl2-image-2.0-0
+```
+
+2. install with roswell
 
 ```sh
 $ ros install t-sin/my-generative-art-sketches
 ```
 
-2. load system
+3. load system
 
 ```lisp
 CL-USER> (ql:quickload :my-sketches)
 ```
 
-3. run as making instance
+4. run as making instance
 
 ```lisp
 CL-USER> (make-instance 'my-sketches.perlin-circle:mysketch)
