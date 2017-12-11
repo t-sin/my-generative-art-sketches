@@ -17,4 +17,5 @@
                (:file "bubbles")
                (:file "wall")
                (:file "fire")
-               (:file "polyline")))
+               (:file "polyline")
+               (:file "network")))
