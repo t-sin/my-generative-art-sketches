@@ -8,7 +8,7 @@
 $ sudo apt install -y libsdl2-ttf-2.0-0 libsdl2-image-2.0-0
 ```
 
-2. install with roswell
+2. install with [roswell](https://github.com/roswell/roswell), Common Lisp implementation manager
 
 ```sh
 $ ros install t-sin/my-generative-art-sketches
