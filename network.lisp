@@ -62,7 +62,7 @@
   (sqrt (+ (expt (- (object-x o1) (object-x o2)) 2)
            (expt (- (object-y o1) (object-y o2)) 2))))
 
-(defun inter-object-lines (o objects)
+(defun draw-inter-object-lines (o objects)
   (loop
      :for o% :across objects
      :for d := (distance o o%)
