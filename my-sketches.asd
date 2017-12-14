@@ -9,7 +9,8 @@
   :depends-on ("black-tie"
                "easing"
                "sketch")
-  :components ((:file "perlin-circles")
+  :components ((:file "my-sketches")
+               (:file "perlin-circles")
                (:file "perlin-cloud")
                (:file "line-flower")
                (:file "floating-circles")
