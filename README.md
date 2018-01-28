@@ -2,9 +2,9 @@
 
 ## samples
 
-![sample01](https://raw.githubusercontent.com/t-sin/rosa/master/sample/01.png)
-![sample02](https://raw.githubusercontent.com/t-sin/rosa/master/sample/02.png)
-![sample03](https://raw.githubusercontent.com/t-sin/rosa/master/sample/03.png)
+![sample01](https://raw.githubusercontent.com/t-sin/my-generative-art-sketches/master/sample/01.png)
+![sample02](https://raw.githubusercontent.com/t-sin/my-generative-art-sketches/master/sample/02.png)
+![sample03](https://raw.githubusercontent.com/t-sin/my-generative-art-sketches/master/sample/03.png)
 
 ## Installation
 
