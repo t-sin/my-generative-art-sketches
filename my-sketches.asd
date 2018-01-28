@@ -19,4 +19,5 @@
                (:file "wall")
                (:file "fire")
                (:file "polyline")
-               (:file "network")))
+               (:file "network")
+               (:file "perlin-contour")))
